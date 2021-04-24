@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_play/meterial.dart';
+import 'package:my_play/widgets/tracks.dart';
 
 class MyPlay extends StatefulWidget {
   @override
@@ -9,13 +9,13 @@ class MyPlay extends StatefulWidget {
 class _MyPlayState extends State<MyPlay> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.purple[200],
-        leading: Icon(Icons.music_note_sharp,color: Colors.black,),
-        title: Text('My Music',style: TextStyle(color: Colors.black),),
+    return MaterialApp(
+      title: "My play",
+      theme: ThemeData(
+        primarySwatch: Colors.purple[200],
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      
+      home: Tracks(),
     );
   }
 }

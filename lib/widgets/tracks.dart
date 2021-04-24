@@ -12,6 +12,9 @@ class _TracksState extends State<Tracks> {
 
 void getTracks()async{
   songs = await audioQuery.getSongs();
+  setState(() {
+      songs=songs;
+    });
 }
 
   @override
@@ -22,7 +25,8 @@ void getTracks()async{
         leading: Icon(Icons.music_note_sharp,color: Colors.black,),
         title: Text('My Music',style: TextStyle(color: Colors.black),), 
       ),
-      body: ListView.separated(separatorBuilder: (context,index)=>Divider()),
+      body: ListView.separated(separatorBuilder: (context,index)=>Divider(),itemCount: songs.length,),
+      
       
     );
   }
